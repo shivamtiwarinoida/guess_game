@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/game.css">
+    <title>Shiv s Page</title>
+</head>
+<body>
+    <div class="headi">
+        <span>Hackathon</span>
+    </div>
+    <div class="container">
+        <div class="contain">
+            <h3><u>Game</u></h3>
+            <p id="out1">Enter a number between 1 to 100</p>
+            <input type="text" class="in1" placeholder="Number" id="user">
+            <button class="btn1" id="btn1">Enter</button>
+        </div>
+    </div>
+
+    <script>
+        let btn=document.getElementById('btn1');
+        let out=document.getElementById('out1');
+        let num=Math.floor(Math.random()*100)+1;
+        console.log(num);
+
+        btn.addEventListener('click',function(){
+            let inp1=document.getElementById('user').value;
+            let inp=Number(inp1);
+
+            if(inp==num){
+                out.innerHTML="You make Correct Guess ";
+            }
+            else if(inp<num){
+                out.innerHTML="Little bit More..";
+            }
+            else{
+                out.innerHTML="Little bit Small..";
+            }
+        })
+    </script>
+</body>
+</html>
